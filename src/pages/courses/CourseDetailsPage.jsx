@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import PaymentModal from "@/components/PaymentModal";
 import { Share2, Clock, Users, Award, CheckCircle } from "lucide-react";
+import { allCourses } from "../Courses";
 
 export default function CourseDetailsPage() {
   const { slug } = useParams();
@@ -22,16 +23,18 @@ export default function CourseDetailsPage() {
     if (errorHandledRef.current) {
       return;
     }
-    
+
     // Mark this image as error handled
     errorHandledRef.current = true;
-    
+
     // Hide the image and show a placeholder div
-    e.target.style.display = 'none';
-    
-    const placeholderDiv = document.createElement('div');
-    placeholderDiv.className = 'absolute inset-0 bg-gray-200 flex items-center justify-center rounded-lg';
-    placeholderDiv.innerHTML = '<span class="text-gray-500 text-sm">Image not available</span>';
+    e.target.style.display = "none";
+
+    const placeholderDiv = document.createElement("div");
+    placeholderDiv.className =
+      "absolute inset-0 bg-gray-200 flex items-center justify-center rounded-lg";
+    placeholderDiv.innerHTML =
+      '<span class="text-gray-500 text-sm">Image not available</span>';
     e.target.parentNode.appendChild(placeholderDiv);
   };
 
@@ -189,11 +192,7 @@ export default function CourseDetailsPage() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <Button 
-                    className="flex-1" 
-                    size="lg"
-                    onClick={handleEnroll}
-                  >
+                  <Button className="flex-1" size="lg" onClick={handleEnroll}>
                     Enroll Now
                   </Button>
                   <Button variant="outline" size="icon" onClick={handleShare}>
