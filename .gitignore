@@ -1,5 +1,75 @@
-# Logs
-logs
+# =============================================================================
+# SkillCertify — Client (Frontend) .gitignore
+# Vite + React project
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Environment variables & credentials
+# .env holds real secrets — NEVER commit it.
+# env.example / .env.example must contain ONLY placeholder values, not real keys.
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.*.local
+*.env
+.envrc
+
+# -----------------------------------------------------------------------------
+# Private keys, certificates & secrets
+# -----------------------------------------------------------------------------
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+id_rsa
+id_ed25519
+credentials.json
+firebase-service-account.json
+service-account*.json
+*-service-account.json
+secrets/
+private/
+certificates/
+keys/
+
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+
+# -----------------------------------------------------------------------------
+# Build & generated output
+# dist/ is a Vite build artifact — regenerated on every build, not source code.
+# -----------------------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+.turbo/
+.cache/
+.parcel-cache/
+
+# -----------------------------------------------------------------------------
+# Logs & debug
+# -----------------------------------------------------------------------------
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,60 +77,81 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# -----------------------------------------------------------------------------
+# Coverage & testing artifacts
+# -----------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
 
-# Editor directories and files
+# -----------------------------------------------------------------------------
+# Runtime & temp
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+.node_repl_history
+.npm
+.eslintcache
+.yarn-integrity
+
+# -----------------------------------------------------------------------------
+# Database & backup files
+# (client/lib/ has MongoDB helpers — their connection strings come from .env)
+# -----------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+backups/
+*.bak
+*.backup
+
+# -----------------------------------------------------------------------------
+# OS-generated files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# -----------------------------------------------------------------------------
+# Editor & IDE files
+# -----------------------------------------------------------------------------
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+*~
 
-# Environment variables and private config
-.env
-.env.local
-# Ignore example env files too (per request)
-env.example
-.env.example
-server/env.example
-# Additional environment files
-*.env
-*.env.*
-env.*
-server/env.*
-client/env.*
-.env.development
-.env.production
-.env.*.local
+# -----------------------------------------------------------------------------
+# Upload & user data directories
+# -----------------------------------------------------------------------------
+uploads/
+public/uploads/
 
-# OS generated files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Mac system files
-*.DS_Store
-
-#build
-build/
-build-ssr/
-
-# Additional secrets and keys
-server/.env
-*.pem
-*.key
-*.p12
-*.pfx
-*.keystore
-*.jks
-credentials.json
-firebase-service-account.json
-.envrc
-.npmrc
+# -----------------------------------------------------------------------------
+# DO NOT ignore the following (preserved intentionally):
+#   env.example         — safe template with placeholder values only
+#   package.json        — required
+#   package-lock.json   — required for reproducible installs
+#   vite.config.js      — required build config
+#   tailwind.config.js  — required build config
+#   postcss.config.js   — required build config
+#   eslint.config.js    — required linting config
+#   src/                — all application source code
+#   public/             — public static assets
+#   index.html          — Vite entry point
+# -----------------------------------------------------------------------------
