@@ -19,6 +19,8 @@
 .env.*.local
 *.env
 .envrc
+env.example
+.env.example
 
 # -----------------------------------------------------------------------------
 # Private keys, certificates & secrets
@@ -144,7 +146,6 @@ public/uploads/
 
 # -----------------------------------------------------------------------------
 # DO NOT ignore the following (preserved intentionally):
-#   env.example         — safe template with placeholder values only
 #   package.json        — required
 #   package-lock.json   — required for reproducible installs
 #   vite.config.js      — required build config
@@ -154,4 +155,9 @@ public/uploads/
 #   src/                — all application source code
 #   public/             — public static assets
 #   index.html          — Vite entry point
+#
+# NOTE: env.example and .env.example are ignored because this project's
+#       env.example currently contains real live credentials. Once the file
+#       is sanitised to use only placeholder values, you can remove it from
+#       this list so it becomes trackable again as a safe onboarding template.
 # -----------------------------------------------------------------------------
