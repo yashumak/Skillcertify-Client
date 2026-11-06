@@ -6,7 +6,6 @@
 # -----------------------------------------------------------------------------
 # Environment variables & credentials
 # .env holds real secrets — NEVER commit it.
-# env.example / .env.example must contain ONLY placeholder values, not real keys.
 # -----------------------------------------------------------------------------
 .env
 .env.local
@@ -156,8 +155,8 @@ public/uploads/
 #   public/             — public static assets
 #   index.html          — Vite entry point
 #
-# NOTE: env.example and .env.example are ignored because this project's
-#       env.example currently contains real live credentials. Once the file
-#       is sanitised to use only placeholder values, you can remove it from
-#       this list so it becomes trackable again as a safe onboarding template.
+# NOTE: env.example and .env.example are ignored. All variables have been
+#       moved into the actual .env files (client/.env and server/.env).
+#       If you later create a sanitised template with placeholder values only,
+#       you can remove env.example from this list to make it trackable.
 # -----------------------------------------------------------------------------
